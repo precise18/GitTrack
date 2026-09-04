@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitTrack - Student Activity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 GitTrack Dashboard</h1>
+            <p>Student Activity Monitoring</p>
+            <button onclick="refreshData()" class="refresh-btn">🔄 Refresh Data</button>
+        </header>
+
+        <main>
+            <!-- Summary Cards -->
+            <section class="summary-cards">
+                <div class="card">
+                    <h3>Total Students</h3>
+                    <p id="totalStudents">0</p>
+                </div>
+                <div class="card">
+                    <h3>Total Commits</h3>
+                    <p id="totalCommits">0</p>
+                </div>
+                <div class="card">
+                    <h3>Total Merge Requests</h3>
+                    <p id="totalMRs">0</p>
+                </div>
+                <div class="card">
+                    <h3>Most Active</h3>
+                    <p id="mostActive">-</p>
+                </div>
+            </section>
+
+            <!-- Charts -->
+            <section class="charts">
+                <div class="chart-container">
+                    <h3>📈 Commits Per Student</h3>
+                    <canvas id="commitsChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>📊 Activity Distribution</h3>
+                    <canvas id="activityChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Student List -->
+            <section class="student-list">
+                <h3>👥 Student Activity</h3>
+                <div id="studentTableContainer">
+                    <table id="studentTable">
+                        <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Commits</th>
+                                <th>Merge Requests</th>
+                                <th>Total Activity</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody">
+                            <tr><td colspan="4">Loading data...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>GitTrack &copy; 2026 | Built with ❤️ on AWS</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
