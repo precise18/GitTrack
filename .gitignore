@@ -42,3 +42,4 @@ credentials
 .pytest_cache/
 .coverage
 htmlcov/
+bucket-policy.json
